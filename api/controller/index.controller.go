@@ -8,11 +8,11 @@ import (
 	"net/http"
 )
 
-func UserController(w http.ResponseWriter, r *http.Request) {
+func IndexController(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	if r.Method == http.MethodGet {
-		userData := model.GetUser()
-		outputJson, err := json.Marshal(&userData)
+		indexMessage := model.GetIndexMessage()
+		outputJson, err := json.Marshal(&indexMessage)
 		if err != nil {
 			log.Fatal(err)
 			w.WriteHeader(http.StatusInternalServerError)
