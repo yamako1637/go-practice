@@ -9,6 +9,7 @@ import (
 )
 
 func UserController(w http.ResponseWriter, r *http.Request) {
+	log.Printf("/user " + r.Method)
 	w.Header().Set("Content-Type", "application/json")
 	if r.Method == http.MethodGet {
 		userData := model.GetUser()
