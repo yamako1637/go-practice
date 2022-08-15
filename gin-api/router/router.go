@@ -6,9 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetRouter(engine *gin.Engine) *gin.Engine {
-	engine.GET("/", controller.IndexController)
-	engine.GET("/user", controller.UserController)
+func SetRouter(app *gin.Engine) *gin.Engine {
+	app.GET("/", controller.IndexController)
+	app.GET("/user", controller.UserController)
 
-	return engine
+	return app
 }

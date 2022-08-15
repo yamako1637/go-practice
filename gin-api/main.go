@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	engine := gin.Default()
-	server := router.SetRouter(engine)
-	server.Run(":8080")
+	app := router.SetRouter(gin.Default())
+	app.Run(":8080")
 }
